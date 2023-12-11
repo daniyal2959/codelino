@@ -1,0 +1,2032 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>کدلینو | طعم خوب کد آزاد</title>
+
+  <link rel="stylesheet" href="../dist/output.css">
+  <link rel="stylesheet" href="../dist/font.css">
+  
+</head>
+
+<body class="bg-slate-50 transition-all opacity-0 dark:bg-slate-800 hover:dark:before:bg-slate-700">
+
+  <div class="fixed bottom-4 right-4 w-12 h-12 rounded-full p-4 shadow-lg z-50 flex justify-center items-center cursor-pointer transition-all dark:bg-white/10" id="darkmode-toggle">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+      <path d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z" class="fill-slate-800 transition-all dark:fill-white"/>
+    </svg>
+  </div>
+
+  <div>
+    <header class="absolute inset-x-0 top-0 z-50">
+      <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+        <div class="flex lg:flex-1">
+          <a href="#" class="flex justify-center items-center select-none -m-1.5 p-1.5">
+            <span class="sr-only dark:text-white">کدلینو</span>
+            <img class="h-8 w-auto" src="../dist/img/logo.svg" alt="">
+            <p class="text-md mr-6 text-black dark:text-white">کدلینو | طعم خوب کد آزاد</p>
+          </a>
+        </div>
+        <div class="flex close-menu lg:hidden" id="hamburger-menu">
+          <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+            <span class="sr-only dark:text-white">منوی اصلی را باز کنید</span>
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+              aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+          </button>
+        </div>
+        <div class="hidden lg:flex lg:gap-x-12">
+          <a href="#" class="text-sm font-semibold leading-6 text-gray-900 dark:text-white">صفحه اصلی</a>
+          <a href="#" class="text-sm font-semibold leading-6 text-gray-900 dark:text-white">کامپوننت ها</a>
+          <a href="#" class="text-sm font-semibold leading-6 text-gray-900 dark:text-white">قالب ها</a>
+        </div>
+        <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+          <a href="login.html" class="text-sm font-semibold leading-6 text-gray-900 dark:text-white">ورود / ثبت نام <span aria-hidden="true"
+              class="mr-4">&larr;</span></a>
+        </div>
+      </nav>
+      <!-- Mobile menu, show/hide based on menu open state. -->
+      <div class="transition-all lg:hidden" role="dialog" aria-modal="true">
+        <!-- Background backdrop, show/hide based on slide-over state. -->
+        <div class="transition-all hidden opacity-0 fixed inset-0 z-50 bg-black/80 close-menu" id="overlay"></div>
+        <div id="mobile-menu"
+          class="transition-all opacity-0 duration-500 fixed inset-y-0 right-0 z-50 w-0 overflow-y-auto bg-slate-50 py-6 sm:max-w-0 sm:ring-1 sm:ring-gray-900/10">
+          <div class="flex items-center justify-between">
+            <a href="#" class="flex justify-center items-center select-none -m-1.5 p-1.5">
+              <span class="sr-only">کدلینو</span>
+              <img class="h-8 w-auto" src="../dist/img/logo.svg" alt="">
+              <p class="text-md mr-6 text-black">کدلینو | طعم خوب کد آزاد</p>
+            </a>
+            <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700 close-menu">
+              <span class="sr-only">بستن منو</span>
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <div class="mt-6 flow-root">
+            <div class="-my-6 divide-y divide-gray-500/10">
+              <div class="space-y-2 py-6">
+                <a href="#"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">صفحه
+                  اصلی</a>
+                <a href="#"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">کامپوننت
+                  ها</a>
+                <a href="#"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">قالب
+                  ها</a>
+              </div>
+              <div class="py-6">
+                <a href="login.html"
+                  class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">ورود
+                  / ثبت نام</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="relative isolate px-6 pt-14 lg:px-8">
+      <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+        aria-hidden="true">
+        <div
+          class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+          style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+        </div>
+      </div>
+      <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:pt-32 lg:pb-0">
+        <div class="hidden sm:mb-8 sm:flex sm:justify-center">
+          <div
+            class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20 select-none dark:text-white dark:ring-white/20">
+            تهیه شده با ❤️ توسط خودمون | از کد آزاد لذت ببرید
+          </div>
+        </div>
+        <div class="text-center">
+          <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-3xl dark:text-white">کامپوننت های زیبای UI که با Tailwind
+            ساخته شدن</h1>
+          <p class="mt-6 text-lg leading-8 text-gray-600 dark:text-white">بیشتر از 100 کامپوننت که به صورت حرفه ای و کاملا ریسپانسیو
+            ساخته شده اند که به سادگی میتونین داخل پروژه خودتون استفاده و سفارشی سازی کنین </p>
+          <div class="mt-10 flex items-center justify-center gap-x-6">
+            <a href="#"
+              class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:text-white">بریم
+              شروع کنیم</a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+        aria-hidden="true">
+        <div
+          class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+          style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pb-32 border-b border-b-slate-200 transition-all dark:border-b-white/10">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto mt-16 sm:mt-20 lg:mt-24">
+        <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-3 lg:gap-y-16">
+          <div class="relative pr-16">
+            <dt class="text-base font-semibold leading-7 text-gray-900 dark:text-gray-300">
+              <div class="absolute right-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                <svg class="h-10 w-10 shrink-0 transform-cpu rounded-lg shadow-md shadow-indigo-500/[.12]"
+                  viewBox="0 0 40 40" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M27 25.335L30.25 27l-6.603 3.382a8 8 0 01-7.294 0L9.75 27 13 25.335m14-6.999L30.25 20l-6.603 3.382a8 8 0 01-7.294 0L9.75 20 13 18.336"
+                    class="stroke-white/50"></path>
+                  <path d="M9.75 13l9.338-4.783a2 2 0 011.824 0L30.25 13l-6.603 3.382a8 8 0 01-7.294 0L9.75 13z"
+                    class="stroke-white"></path>
+                </svg>
+              </div>
+              بیش از 500 کامپوننت
+            </dt>
+            <dd class="mt-2 text-justify leading-7 text-gray-600 dark:text-white">کامپوننت هایی با طراحی زیبا که ماهرانه ساخته شده اند و
+              به سادگی قابل دسترس و سفارشی سازی هستند</dd>
+          </div>
+          <div class="relative pr-16">
+            <dt class="text-base font-semibold leading-7 text-gray-900 dark:text-gray-300">
+              <div class="absolute right-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                <svg class="h-10 w-10 shrink-0 transform-cpu rounded-lg shadow-md shadow-indigo-500/[.12]"
+                  viewBox="0 0 40 40" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22.25 11.75l-4.5 16.5" class="stroke-white/50"></path>
+                  <path
+                    d="M16.25 7.75h-.5a4 4 0 00-4 4v4.007a3 3 0 01-.88 2.122 3 3 0 000 4.242 3 3 0 01.88 2.122v4.007a4 4 0 004 4h.5m7.5-24.5h.5a4 4 0 014 4v4.007a3.002 3.002 0 00.878 2.122 3 3 0 010 4.242 3 3 0 00-.878 2.122v4.007a4 4 0 01-4 4h-.5"
+                    class="stroke-white"></path>
+                </svg>
+              </div>
+              فریمورک های متفاوت
+            </dt>
+            <dd class="mt-2 text-justify leading-7 text-gray-600 dark:text-white">در همه تکنولوژی هایی که از Tailwind استفاده میکنن،
+              میتونین از این کامپوننت ها استفاده کنین</dd>
+          </div>
+          <div class="relative pr-16">
+            <dt class="text-base font-semibold leading-7 text-gray-900 dark:text-gray-300">
+              <div class="absolute right-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600">
+                <svg class="h-10 w-10 shrink-0 transform-cpu rounded-lg shadow-md shadow-indigo-500/[.12]"
+                  viewBox="0 0 40 40" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M7.75 21.25v-1.5a4 4 0 014-4h7.5m5 5v7.5a4 4 0 01-4 4h-1.5M27.75 32.25h.5a4 4 0 004-4v-10.5m-10-10h-10.5a4 4 0 00-4 4v.5"
+                    class="stroke-white/50"></path>
+                  <path d="M31.5 8.5l-23 23" class="stroke-white"></path>
+                  <path d="M25.75 7.75h4.5a2 2 0 012 2v4.5m-18 18h-4.5a2 2 0 01-2-2v-4.5" class="stroke-white"></path>
+                </svg>
+              </div>
+              کاملا ریسپانسیو
+            </dt>
+            <dd class="mt-2 text-justify leading-7 text-gray-600 dark:text-white">همه کامپوننت ها کاملا ریسپانسیو و با دقت طراحی و پیاده
+              سازی شده اند تا در تمامی ابعاد عالی به نظر برسند</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="sticky top-0 overflow-x-auto whitespace-nowrap border-b transition duration-100 z-10 border-transparent bg-white shadow-sm dark:bg-slate-800">
+    <div
+      class="mx-auto flex max-w-container justify-between space-x-8 py-4 text-sm font-semibold leading-6 text-slate-900">
+      <div class="flex pr-4 sm:pr-6 lg:pr-8">
+        <a class="pl-8 dark:text-white" href="#marketing-components">بازاریابی</a>
+        <a class="pl-8 dark:text-white" href="#ui-components">رابط کاربری</a>
+        <a class="pl-8 dark:text-white" href="#ecommerce-components">فروشگاه اینترنتی</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Marketing Components -->
+  <div class="bg-white dark:bg-slate-800" id="marketing-components">
+    <div class="relative mx-auto w-full max-w-container space-y-5 px-4 pt-20 sm:px-6 lg:px-8">
+      <h2 class="text-xl font-bold text-slate-900 dark:text-slate-300">بازاریابی</h2>
+      <p class="mt-3 text-sm leading-7 text-slate-500 dark:text-white">بخش هیرو (Hero)، بخش وِیژگی ها، فرم های عضویت در خبرنامه - همه
+        چیزهایی که برای ساختن وب سایت های بازاریابی زیبا نیاز دارید</p>
+      <div class="mt-10 divide-y divide-slate-100 border-t border-slate-100 lg:mt-12 dark:border-white/10">
+        <section id="product-marketing-sections"
+          class="grid scroll-mt-12 grid-cols-1 gap-x-8 gap-y-10 py-10 lg:py-12 xl:grid-cols-4">
+          <h3 class="text-base font-semibold text-slate-900 dark:text-white">سکشن های صفحه</h3>
+          <ul class="col-span-3 grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2 sm:gap-y-10 md:grid-cols-3 xl:gap-x-8">
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/heroes.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600 dark:text-white">
+                  <a href="./single.html">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">بخش هیرو (Hero Sections)</span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">12 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div
+                class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/feature-sections.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600 dark:text-white">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">بخش ویژگی ها (Features Sections)</span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">18 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div
+                class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/cta-sections.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">بخش Call to Actions</span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">11 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div
+                class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/pricing.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">بخش قیمت ها</span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">13 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div
+                class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/header.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">بخش سربرگ ها</span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">10 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div
+                class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/newsletter-sections.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">بخش خبرنامه</span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">7 کامپوننت</p>
+              </div>
+            </li>
+
+
+
+
+
+            <li>
+              <div
+                class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/stats-sections.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">آمار و ارقام<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">10 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div
+                class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/testimonials.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">نطرات مشتریان<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">9 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div
+                class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/blog-sections.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">بخش بلاگ</span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">7 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div
+                class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/contact-sections.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">بخش ارتباط با ما</span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">8 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div
+                class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/team-sections.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">بخش تیم ما</span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">9 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div
+                class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/content-sections.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">بخش محتوا</span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">6 کامپوننت</p>
+              </div>
+            </li>
+
+
+
+
+
+            <li>
+              <div
+                class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/logo-clouds.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">بخش لوگوی مشتریان</span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">12 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div
+                class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/faq-sections.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">بخش سوالات متداول</span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">10 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div
+                class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/footers.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">بخش پاروقی (Footer)</span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">10 کامپوننت</p>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section id="product-marketing-elements" class="grid scroll-mt-12 grid-cols-1 gap-x-8 gap-y-10 py-10 lg:py-12 xl:grid-cols-4">
+          <h3 class="text-base font-semibold text-slate-900">عناصر صفحه</h3>
+          <ul class="col-span-3 grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2 sm:gap-y-10 md:grid-cols-3 xl:gap-x-8">
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/headers.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/elements/headers">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">سربرگ ها</span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">12 کامپوننت</p>
+              </div>
+            </li>
+            
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/flyout-menus.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/elements/headers">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">منوی شناور</span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">7 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/banners.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/elements/headers">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">بنر ها</span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">13 کامپوننت</p>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section id="product-marketing-feedback" class="grid scroll-mt-12 grid-cols-1 gap-x-8 gap-y-10 py-10 lg:py-12 xl:grid-cols-4">
+          <h3 class="text-base font-semibold text-slate-900">بازخورد</h3>
+          <ul class="col-span-3 grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2 sm:gap-y-10 md:grid-cols-3 xl:gap-x-8">
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/404-pages.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/elements/headers">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">صفحه های 404</span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">5 کامپوننت</p>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section id="product-marketing-pages" class="grid scroll-mt-12 grid-cols-1 gap-x-8 gap-y-10 py-10 lg:py-12 xl:grid-cols-4">
+          <h3 class="text-base font-semibold text-slate-900">نمونه صفحات</h3>
+          <ul class="col-span-3 grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2 sm:gap-y-10 md:grid-cols-3 xl:gap-x-8">
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/landing-pages.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/elements/headers">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">صفحه های فرود (Landing Pages)</span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">4 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/pricing-pages.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/elements/headers">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">صفحه های قیمت</span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">3 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/about-pages.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/elements/headers">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">صفحه های درباره ما</span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">3 کامپوننت</p>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <!-- UI Components -->
+  <div class="bg-white" id="ui-components">
+    <div class="relative bg-white mx-auto w-full max-w-container space-y-5 px-4 pt-20 sm:px-6 lg:px-8">
+      <h2 class="pt-3 text-xl font-bold text-slate-900">رابط کاربری</h2>
+      <p class="text-sm leading-7 text-slate-500">لایه بندی فرم ها، جدول ها، صفحات مدال (Modal) - هر چیزی که برای ساختن اپلیکیشن وب ریسپانسیو بهش نیاز دارین</p>
+      <div class="mt-10 divide-y divide-slate-100 border-t border-slate-100 lg:mt-12">
+        <section id="product-ui-sections" class="grid scroll-mt-12 grid-cols-1 gap-x-8 gap-y-10 py-10 lg:py-12 xl:grid-cols-4">
+          <h3 class="text-base font-semibold text-slate-900">پوسته اپلیکیشن</h3>
+          <ul class="col-span-3 grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2 sm:gap-y-10 md:grid-cols-3 xl:gap-x-8">
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/stacked.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">لایه بندی چسبیده<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">9 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/sidebar.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">لایه بندی همراه با سایدبار<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">8 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/multi-column.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">لایه بندی چند ستونه<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">6 کامپوننت</p>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section id="product-ui-sections" class="grid scroll-mt-12 grid-cols-1 gap-x-8 gap-y-10 py-10 lg:py-12 xl:grid-cols-4">
+          <h3 class="text-base font-semibold text-slate-900">سر تیتر ها</h3>
+          <ul class="col-span-3 grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2 sm:gap-y-10 md:grid-cols-3 xl:gap-x-8">
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/page-headings.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">سر تیتر های صفحه<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">13 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/card-headings.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">سر تیتر های کارت<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">6 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/section-headings.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">سر تیتر های بخش ها<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">10 کامپوننت</p>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section id="product-ui-sections" class="grid scroll-mt-12 grid-cols-1 gap-x-8 gap-y-10 py-10 lg:py-12 xl:grid-cols-4">
+          <h3 class="text-base font-semibold text-slate-900">لیست ها</h3>
+          <ul class="col-span-3 grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2 sm:gap-y-10 md:grid-cols-3 xl:gap-x-8">
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/stacked-lists.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">لیست های چسبیده<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">17 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/tables.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">جدول ها<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">20 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/grid-lists.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">لیست های شبکه ای<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">7 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/feeds.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">خوراک ها (Feeds)<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">3 کامپوننت</p>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section id="product-ui-sections" class="grid scroll-mt-12 grid-cols-1 gap-x-8 gap-y-10 py-10 lg:py-12 xl:grid-cols-4">
+          <h3 class="text-base font-semibold text-slate-900">نمایش داده ها</h3>
+          <ul class="col-span-3 grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2 sm:gap-y-10 md:grid-cols-3 xl:gap-x-8">
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/description-lists.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">سر تیتر های صفحه<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">7 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/stats.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">آمار و ارقام<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">5 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/calendars.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">تقویم<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">8 کامپوننت</p>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section id="product-ui-sections" class="grid scroll-mt-12 grid-cols-1 gap-x-8 gap-y-10 py-10 lg:py-12 xl:grid-cols-4">
+          <h3 class="text-base font-semibold text-slate-900">فرم ها</h3>
+          <ul class="col-span-3 grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2 sm:gap-y-10 md:grid-cols-3 xl:gap-x-8">
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/form-layouts.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">لایه بندی فرم<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">5 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/input-groups.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">ورودی داده (Input Group)<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">21 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/select-menus.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">منوی Select<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">7 کامپوننت</p>
+              </div>
+            </li>
+
+
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/form-layouts.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">ورود و ثبت نام<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">5 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/textareas.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">ورودی داده (Textarea)<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">5 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/radio-groups.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">دکمه های رادیویی<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">12 کامپوننت</p>
+              </div>
+            </li>
+
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/checkboxes.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">چک باکس<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">4 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/toggles.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">تغییر وضعیت<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">5 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/action-panels.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">پنل عملیات<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">8 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/comboboxes.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">کامبو باکس<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">5 کامپوننت</p>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section id="product-ui-sections" class="grid scroll-mt-12 grid-cols-1 gap-x-8 gap-y-10 py-10 lg:py-12 xl:grid-cols-4">
+          <h3 class="text-base font-semibold text-slate-900">بازخورد</h3>
+          <ul class="col-span-3 grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2 sm:gap-y-10 md:grid-cols-3 xl:gap-x-8">
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/alerts.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">هشدارها<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">6 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/empty-states.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">فضای خالی<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">6 کامپوننت</p>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section id="product-ui-sections" class="grid scroll-mt-12 grid-cols-1 gap-x-8 gap-y-10 py-10 lg:py-12 xl:grid-cols-4">
+          <h3 class="text-base font-semibold text-slate-900">جهت یابی</h3>
+          <ul class="col-span-3 grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2 sm:gap-y-10 md:grid-cols-3 xl:gap-x-8">
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/navbars.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">منوی اصلی<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">11 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/pagination.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">صفحه بندی<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">3 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/tabs.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">تب ها<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">9 کامپوننت</p>
+              </div>
+            </li>
+
+
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/vertical-navigation.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">منوی عمودی<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">6 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/sidebar-navigation.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">سایدبار<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">5 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/breadcrumbs.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">نشانگر صفحه (Breadcrumb)<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">4 کامپوننت</p>
+              </div>
+            </li>
+
+
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/steps.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">مرحله های فرم<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">8 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/command-palettes.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">جستجو<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">9 کامپوننت</p>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section id="product-ui-sections" class="grid scroll-mt-12 grid-cols-1 gap-x-8 gap-y-10 py-10 lg:py-12 xl:grid-cols-4">
+          <h3 class="text-base font-semibold text-slate-900">پوشش ها</h3>
+          <ul class="col-span-3 grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2 sm:gap-y-10 md:grid-cols-3 xl:gap-x-8">
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/modals.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">مدال ها (Modal)<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">6 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/slide-overs.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">منوی مخفی<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">12 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/notifications.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">نوتیفیکیشن ها<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">6 کامپوننت</p>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section id="product-ui-sections" class="grid scroll-mt-12 grid-cols-1 gap-x-8 gap-y-10 py-10 lg:py-12 xl:grid-cols-4">
+          <h3 class="text-base font-semibold text-slate-900">عناصر صفحه</h3>
+          <ul class="col-span-3 grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2 sm:gap-y-10 md:grid-cols-3 xl:gap-x-8">
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/avatars.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">آواتار<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">11 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/badges.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">نشانه ها<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">18 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/dropdowns.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">منوی کشویی<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">5 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/buttons.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">دکمه ها<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">10 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/button-groups.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">دکمه های گروهی<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">5 کامپوننت</p>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section id="product-ui-sections" class="grid scroll-mt-12 grid-cols-1 gap-x-8 gap-y-10 py-10 lg:py-12 xl:grid-cols-4">
+          <h3 class="text-base font-semibold text-slate-900">لایه ها</h3>
+          <ul class="col-span-3 grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2 sm:gap-y-10 md:grid-cols-3 xl:gap-x-8">
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/containers.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">کانتینر ها<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">5 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/panels.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">پنل ها<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">10 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/list-containers.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">لیست کانتینر ها<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">6 کامپوننت</p>
+              </div>
+            </li>
+
+
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/media-objects.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">جعبه رسانه ها<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">8 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/dividers.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">تقسیم کننده ها<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">8 کامپوننت</p>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section id="product-ui-sections" class="grid scroll-mt-12 grid-cols-1 gap-x-8 gap-y-10 py-10 lg:py-12 xl:grid-cols-4">
+          <h3 class="text-base font-semibold text-slate-900">نمونه صفحه ها</h3>
+          <ul class="col-span-3 grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2 sm:gap-y-10 md:grid-cols-3 xl:gap-x-8">
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/home-screens.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">صفحه اصلی<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">2 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/detail-screens.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">صفحه جزئیات<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">2 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/settings-screens.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">صفحه تنظیمات<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">2 کامپوننت</p>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </div>
+
+   <!-- E-Commerce Components -->
+   <div class="bg-white" id="ecommerce-components">
+    <div class="relative bg-white mx-auto w-full max-w-container space-y-5 px-4 pt-20 sm:px-6 lg:px-8">
+      <h2 class="text-xl font-bold text-slate-900">فروشگاه اینترنتی</h2>
+      <p class="mt-3 text-sm leading-7 text-slate-500">صفحه پرداخت، سبد خرید و نمایش محصولات - هر چیزی که برای ساختن فروشگاه اینترنی بعدی خودتون بهش نیاز دارین</p>
+      <div class="mt-10 divide-y divide-slate-100 border-t border-slate-100 lg:mt-12">
+        <section id="product-ui-sections" class="grid scroll-mt-12 grid-cols-1 gap-x-8 gap-y-10 py-10 lg:py-12 xl:grid-cols-4">
+          <h3 class="text-base font-semibold text-slate-900">کامپوننت ها</h3>
+          <ul class="col-span-3 grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2 sm:gap-y-10 md:grid-cols-3 xl:gap-x-8">
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/product-overviews.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">نگاه اجمالی به محصول<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">5 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/product-lists.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">لیست محصولات<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">11 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/category-previews.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">پیش نمایش دسته بندی<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">6 کامپوننت</p>
+              </div>
+            </li>
+
+
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/shopping-carts.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">سبد خرید<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">6 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/category-filters.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">فیلتر های دسته بندی<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">5 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/product-quickviews.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">مشاهده سریع محصول<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">4 کامپوننت</p>
+              </div>
+            </li>
+
+
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/product-features.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">ویژگی های محصول<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">9 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/store-navigation.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">منوهای پیشرفته<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">5 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/promo-sections.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">بخش های تبلیغاتی<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">8 کامپوننت</p>
+              </div>
+            </li>
+
+
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/checkout-forms.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">فرم پرداخت<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">5 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/reviews.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">نظرات کاربران<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">4 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/order-summaries.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">خلاصه سفارش<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">4 کامپوننت</p>
+              </div>
+            </li>
+
+
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/order-history.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">تاریخچه خریدها<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">4 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/incentives.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">خدمات<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">8 کامپوننت</p>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section id="product-ui-sections" class="grid scroll-mt-12 grid-cols-1 gap-x-8 gap-y-10 py-10 lg:py-12 xl:grid-cols-4">
+          <h3 class="text-base font-semibold text-slate-900">نمونه صفحات</h3>
+          <ul class="col-span-3 grid grid-cols-1 gap-x-6 gap-y-6 sm:grid-cols-2 sm:gap-y-10 md:grid-cols-3 xl:gap-x-8">
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/storefront-pages.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">صفحه اصلی سایت فروشگاهی<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">4 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/product-pages.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">صفحات محصول<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">5 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/category-pages.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">صفحات دسته بندی<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">5 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/shopping-cart-pages.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">صفحات سبد خرید<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">3 کامپوننت</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                  <img src="../dist/img/checkout-pages.png" alt="" class="absolute inset-0 h-full w-full">
+                </div>
+                <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                  <a href="/components/marketing/sections/heroes">
+                    <span class="absolute -inset-2.5 z-10"></span>
+                    <span class="relative">صفحات پرداخت<span>
+                  </a>
+                </h4>
+                <p class="relative mt-1.5 text-xs font-medium text-slate-500">5 کامپوننت</p>
+              </div>
+
+              <li>
+                <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                  <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                    <img src="../dist/img/order-detail-pages.png" alt="" class="absolute inset-0 h-full w-full">
+                  </div>
+                  <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                    <a href="/components/marketing/sections/heroes">
+                      <span class="absolute -inset-2.5 z-10"></span>
+                      <span class="relative">صفحات جزئیات سفارش<span>
+                    </a>
+                  </h4>
+                  <p class="relative mt-1.5 text-xs font-medium text-slate-500">3 کامپوننت</p>
+                </div>
+              </li>
+
+              <li>
+                <div class="group relative transition-transform hover:-translate-y-3 before:absolute before:-inset-2.5 before:transition-opacity before:rounded-[20px] before:bg-gray-50 before:opacity-0 hover:before:opacity-100">
+                  <div class="relative aspect-[2/1] overflow-hidden rounded-lg bg-gray-100 ring-1 ring-gray-900/10">
+                    <img src="../dist/img/order-history-pages.png" alt="" class="absolute inset-0 h-full w-full">
+                  </div>
+                  <h4 class="mt-4 text-sm font-medium text-slate-900 transition-colors group-hover:text-indigo-600">
+                    <a href="/components/marketing/sections/heroes">
+                      <span class="absolute -inset-2.5 z-10"></span>
+                      <span class="relative">صفحات تاریخچه سفارشات<span>
+                    </a>
+                  </h4>
+                  <p class="relative mt-1.5 text-xs font-medium text-slate-500">5 کامپوننت</p>
+                </div>
+              </li>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pricing -->
+  <div id="pricing" class="relative overflow-hidden bg-slate-50 pb-20 pt-24 lg:pb-24 xl:pb-32">
+    <img src="../dist/img/beams-pricing.png" alt="" class="absolute left-1/2 top-0 -ml-[40rem] w-[90.4375rem] max-w-none">
+    <div class="absolute inset-x-0 bottom-0 h-96 text-slate-600/10 [mask-image:linear-gradient(to_bottom,transparent,white)]">
+      <svg class="absolute inset-0 h-full w-full" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="pricing-pattern" width="32" height="32" patternUnits="userSpaceOnUse" x="50%" y="100%" patternTransform="translate(0 -1)">
+            <path d="M0 32V.5H32" fill="none" stroke="currentColor"></path>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#pricing-pattern)"></rect>
+      </svg>
+    </div>
+    <div class="relative mx-auto max-w-container px-4 sm:px-6 lg:px-8">
+      <section class="grid grid-cols-1 mx-auto max-w-[40rem] md:grid-cols-2 lg:max-w-none">
+        <div class="max-w-3xl1 px-12">
+          <h2 class="text-base font-semibold leading-7 text-sky-500">شفاف سازی</h2>
+          <p class="mt-4 text-4xl font-extrabold tracking-tight text-slate-900">هزینه های نگهداری سایت</p>
+          <p class="mt-4 max-w-xl text-base leading-8 text-slate-700">همه هزینه ها و درآمدهایی که داریم رو میتونین به صورت کاملا شفاف ببینین. اعتماد حرف اول رو میزنه</p>
+        </div>
+
+        <div class="grid grid-cols-1 gap-20 max-w-3xl1 px-12 mt-8 lg:grid-cols-2 lg:mt-0">
+          <div class="bg-white/50 flex flex-col justify-center items-center shadow-lg rounded-lg p-6">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-10 h-10">
+              <path d="M448 80v48c0 44.2-100.3 80-224 80S0 172.2 0 128V80C0 35.8 100.3 0 224 0S448 35.8 448 80zM393.2 214.7c20.8-7.4 39.9-16.9 54.8-28.6V288c0 44.2-100.3 80-224 80S0 332.2 0 288V186.1c14.9 11.8 34 21.2 54.8 28.6C99.7 230.7 159.5 240 224 240s124.3-9.3 169.2-25.3zM0 346.1c14.9 11.8 34 21.2 54.8 28.6C99.7 390.7 159.5 400 224 400s124.3-9.3 169.2-25.3c20.8-7.4 39.9-16.9 54.8-28.6V432c0 44.2-100.3 80-224 80S0 476.2 0 432V346.1z" fill="#4f46e5"/>
+            </svg>
+            <p class="flex flex-col justify-center items-center mt-4">
+              <span>هزینه نگهداری هاست ها</span>
+              <span>هر ماه: 2,000,000 تومان</span>
+            </p>
+          </div>
+
+          <div class="bg-white/50 flex flex-col justify-center items-center shadow-lg rounded-lg p-6">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-10 h-10">
+              <path d="M352 256c0 22.2-1.2 43.6-3.3 64H163.3c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64H348.7c2.2 20.4 3.3 41.8 3.3 64zm28.8-64H503.9c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6c78.3 20.7 142 77.5 171.9 151.6zm-149.1 0H167.7c6.1-36.4 15.5-68.6 27-94.7c10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5c11.6 26 20.9 58.2 27 94.7zm-209 0H18.6C48.6 85.9 112.2 29.1 190.6 8.4C165.1 42.6 145.3 96.1 135.3 160zM8.1 192H131.2c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64H8.1C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zM194.7 446.6c-11.6-26-20.9-58.2-27-94.6H344.3c-6.1 36.4-15.5 68.6-27 94.6c-10.5 23.6-22.2 40.7-33.5 51.5C272.6 508.8 263.3 512 256 512s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6C112.2 482.9 48.6 426.1 18.6 352H135.3zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6c25.5-34.2 45.2-87.7 55.3-151.6H493.4z" fill="#4f46e5"/>
+            </svg>
+            <p class="flex flex-col justify-center items-center mt-4">
+              <span>هزینه نگهداری دامنه</span>
+              <span>هر سال: 600,000 تومان</span>
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+  
+  <!-- FAQs -->
+  <section id="faqs"
+    class="bg-white mx-auto w-full px-4 sm:px-6 lg:px-8 pt-20 scroll-m-20 sm:pt-24 sm:scroll-m-24 xl:pt-32 xl:scroll-m-32">
+    <div class="max-w-container">
+      <div class="mx-auto grid max-w-[40rem] grid-cols-1 gap-x-14 gap-y-16 lg:max-w-none lg:grid-cols-12">
+        <div class="lg:col-span-4">
+          <h2 class="text-base font-semibold leading-7 text-indigo-500">سوالات متداول</h2>
+          <p class="mt-4 text-4xl font-extrabold tracking-tight text-slate-900 xl:text-5xl xl:leading-[3.5rem]">هر چیزی که لازمه بدونین</p>
+        </div>
+        <div class="-mb-4 space-y-12 lg:col-span-8 xl:col-span-7 xl:col-start-6">
+          <section>
+            <h3 class="text-sm font-semibold leading-7 text-slate-400">سازگار بودن کامپوننت ها</h3>
+            <dl class="mt-2 divide-y divide-slate-100">
+              <details class="group py-4 marker:content-['']">
+                <summary
+                  class="flex w-full cursor-pointer select-none justify-between text-left text-base font-semibold leading-7 text-slate-900 group-open:text-indigo-600 [&amp;::-webkit-details-marker]:hidden">
+                  آیا فایل های Figma, Sketch یا Adobe XD هم وجود دارد؟<svg
+                    class="ml-4 mt-0.5 h-6 w-6 flex-none stroke-slate-700 group-open:stroke-indigo-500" fill="none"
+                    xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 12H6"></path>
+                    <path class="group-open:hidden" d="M12 6v12"></path>
+                  </svg></summary>
+                <div class="pb-6 pt-6">
+                  <div
+                    class="prose prose-slate max-w-none prose-a:font-semibold prose-a:text-indigo-600 hover:prose-a:text-indigo-500">
+                    <p>No, design assets for tools like Figma, Sketch, or Adobe XD are not included.</p>
+                    <p>We don't produce high-quality design artifacts as part of our own design and development process,
+                      so building these extra resources means we can't spend as much time creating new examples in code
+                      which is where we believe we can provide the most value.</p>
+                  </div>
+                </div>
+              </details>
+              <details class="group py-4 marker:content-['']">
+                <summary
+                  class="flex w-full cursor-pointer select-none justify-between text-left text-base font-semibold leading-7 text-slate-900 group-open:text-indigo-600 [&amp;::-webkit-details-marker]:hidden">
+                  چه فریمورک جاوا اسکریپتی استفاده می شود؟<svg
+                    class="ml-4 mt-0.5 h-6 w-6 flex-none stroke-slate-700 group-open:stroke-indigo-500" fill="none"
+                    xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 12H6"></path>
+                    <path class="group-open:hidden" d="M12 6v12"></path>
+                  </svg></summary>
+                <div class="pb-6 pt-6">
+                  <div
+                    class="prose prose-slate max-w-none prose-a:font-semibold prose-a:text-indigo-600 hover:prose-a:text-indigo-500">
+                    <p>All of the components in Tailwind UI are provided in three formats: React, Vue, and vanilla HTML.
+                    </p>
+                    <p>The React and Vue examples are fully functional out-of-the-box, and are powered by<!-- --> <a
+                        href="https://headlessui.dev">Headless UI</a> — a library of unstyled components we designed to
+                      integrate perfectly with Tailwind CSS. Headless UI supports both React and Vue 3, but is not
+                      compatible with Vue 2.</p>
+                    <p>The vanilla HTML examples <strong>do not include any JavaScript</strong> and are designed for
+                      people who prefer to write any necessary JavaScript themselves.</p>
+                    <p>Most of the components do not rely on JS at all, but for the ones that do (dropdowns, modals, etc.)
+                      we've provided some simple comments in the HTML to explain things like what classes you need to use
+                      for different states (like a toggle switch being on or off), or what classes we recommend for
+                      transitioning elements on to or off of the screen (like a modal opening).</p>
+                    <p>To get a better idea of how this looks in practice,<!-- --> <a
+                        href="/documentation#integrating-with-javascript-frameworks">check out our documentation</a>.</p>
+                  </div>
+                </div>
+              </details>
+              <details class="group py-4 marker:content-['']">
+                <summary
+                  class="flex w-full cursor-pointer select-none justify-between text-left text-base font-semibold leading-7 text-slate-900 group-open:text-indigo-600 [&amp;::-webkit-details-marker]:hidden">
+                  چه نسخه ای از Tailwind استفاده می شود؟<svg
+                    class="ml-4 mt-0.5 h-6 w-6 flex-none stroke-slate-700 group-open:stroke-indigo-500" fill="none"
+                    xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 12H6"></path>
+                    <path class="group-open:hidden" d="M12 6v12"></path>
+                  </svg></summary>
+                <div class="pb-6 pt-6">
+                  <div
+                    class="prose prose-slate max-w-none prose-a:font-semibold prose-a:text-indigo-600 hover:prose-a:text-indigo-500">
+                    <p>Everything in Tailwind UI is designed and developed for the latest version of Tailwind CSS, which
+                      is currently Tailwind CSS v<!-- -->3.3<!-- -->.</p>
+                  </div>
+                </div>
+              </details>
+              <details class="group py-4 marker:content-['']">
+                <summary
+                  class="flex w-full cursor-pointer select-none justify-between text-left text-base font-semibold leading-7 text-slate-900 group-open:text-indigo-600 [&amp;::-webkit-details-marker]:hidden">
+                  چه مرورگرهایی پشتیبانی می کنند؟<svg
+                    class="ml-4 mt-0.5 h-6 w-6 flex-none stroke-slate-700 group-open:stroke-indigo-500" fill="none"
+                    xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 12H6"></path>
+                    <path class="group-open:hidden" d="M12 6v12"></path>
+                  </svg></summary>
+                <div class="pb-6 pt-6">
+                  <div
+                    class="prose prose-slate max-w-none prose-a:font-semibold prose-a:text-indigo-600 hover:prose-a:text-indigo-500">
+                    <p>The components in Tailwind UI are designed to work in the latest, stable releases of all major
+                      browsers, including Chrome, Firefox, Safari, and Edge.</p>
+                    <p>We don't support Internet Explorer 11.</p>
+                  </div>
+                </div>
+              </details>
+            </dl>
+          </section>
+          <section>
+            <h3 class="text-sm font-semibold leading-7 text-slate-400">مباحث مالی و لایسنس</h3>
+            <dl class="mt-2 divide-y divide-slate-100">
+              <details class="group py-4 marker:content-['']">
+                <summary
+                  class="flex w-full cursor-pointer select-none justify-between text-left text-base font-semibold leading-7 text-slate-900 group-open:text-indigo-600 [&amp;::-webkit-details-marker]:hidden">
+                  برای استفاده از کامپوننت باید آن کامپوننت خریداری شود؟<svg
+                    class="ml-4 mt-0.5 h-6 w-6 flex-none stroke-slate-700 group-open:stroke-indigo-500" fill="none"
+                    xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 12H6"></path>
+                    <path class="group-open:hidden" d="M12 6v12"></path>
+                  </svg></summary>
+                <div class="pb-6 pt-6">
+                  <div
+                    class="prose prose-slate max-w-none prose-a:font-semibold prose-a:text-indigo-600 hover:prose-a:text-indigo-500">
+                    <p>Unlike most other templates/themes, you don't have to buy a new Tailwind UI license every time you
+                      want to use it on a new project.</p>
+                    <p>As long as what you're building is allowed as per the license, you can build as many sites as you
+                      want without ever having to buy an additional license.</p>
+                    <p>For more information and examples,<!-- --> <a href="/license">read through our license</a>.</p>
+                  </div>
+                </div>
+              </details>
+              <details class="group py-4 marker:content-['']">
+                <summary
+                  class="flex w-full cursor-pointer select-none justify-between text-left text-base font-semibold leading-7 text-slate-900 group-open:text-indigo-600 [&amp;::-webkit-details-marker]:hidden">
+                  آیا می توانم از این کامپوننت ها در پروژه مشتری استفاده کنم؟<svg
+                    class="ml-4 mt-0.5 h-6 w-6 flex-none stroke-slate-700 group-open:stroke-indigo-500" fill="none"
+                    xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 12H6"></path>
+                    <path class="group-open:hidden" d="M12 6v12"></path>
+                  </svg></summary>
+                <div class="pb-6 pt-6">
+                  <div
+                    class="prose prose-slate max-w-none prose-a:font-semibold prose-a:text-indigo-600 hover:prose-a:text-indigo-500">
+                    <p>Yes! As long what you're building is a custom website developed for a single client, you can
+                      totally use components and templates in Tailwind UI to help build it.</p>
+                    <p>The only thing you can't do is use Tailwind UI to build a website or template that is resold to
+                      multiple clients.</p>
+                    <p>For more information and examples, <a href="/license">read through our license</a>.</p>
+                  </div>
+                </div>
+              </details>
+              <details class="group py-4 marker:content-['']">
+                <summary
+                  class="flex w-full cursor-pointer select-none justify-between text-left text-base font-semibold leading-7 text-slate-900 group-open:text-indigo-600 [&amp;::-webkit-details-marker]:hidden">
+                  آیا می توانم کامپوننت خودم را بسازم و آن را بفروشم؟<svg
+                    class="ml-4 mt-0.5 h-6 w-6 flex-none stroke-slate-700 group-open:stroke-indigo-500" fill="none"
+                    xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 12H6"></path>
+                    <path class="group-open:hidden" d="M12 6v12"></path>
+                  </svg></summary>
+                <div class="pb-6 pt-6">
+                  <div
+                    class="prose prose-slate max-w-none prose-a:font-semibold prose-a:text-indigo-600 hover:prose-a:text-indigo-500">
+                    <p>Absolutely! Your license gives you permission to build as many of your own projects as you like,
+                      whether those are simple public websites or SaaS applications that end users need to pay to access.
+                    </p>
+                    <p>As long as what you’re building isn’t a website builder or other tool that customers can use to
+                      create their own sites using elements that originate from Tailwind UI, you’re good to go.</p>
+                    <p>For more information and examples,<!-- --> <a href="/license">read through our license</a>..</p>
+                  </div>
+                </div>
+              </details>
+              <details class="group py-4 marker:content-['']">
+                <summary
+                  class="flex w-full cursor-pointer select-none justify-between text-left text-base font-semibold leading-7 text-slate-900 group-open:text-indigo-600 [&amp;::-webkit-details-marker]:hidden">
+                  چطور می توانم کسب درآمد کنم؟<svg
+                    class="ml-4 mt-0.5 h-6 w-6 flex-none stroke-slate-700 group-open:stroke-indigo-500" fill="none"
+                    xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 12H6"></path>
+                    <path class="group-open:hidden" d="M12 6v12"></path>
+                  </svg></summary>
+                <div class="pb-6 pt-6">
+                  <div
+                    class="prose prose-slate max-w-none prose-a:font-semibold prose-a:text-indigo-600 hover:prose-a:text-indigo-500">
+                    <p>Yep! As long as what you're building is some sort of actual website and not a derivative component
+                      library, theme builder, or other product where the primary purpose is clearly to repackage and
+                      redistribute our components, it's totally okay for that project to be open source.</p>
+                    <p>For more information and examples of what is and isn't okay,<!-- --> <a href="/license">read
+                        through our license</a>.</p>
+                  </div>
+                </div>
+              </details>
+            </dl>
+          </section>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white mx-auto pt-32 w-full px-4 sm:px-6 lg:px-8">
+    <div class="max-w-container border-t border-slate-900/5 py-10 flex flex-col">
+      <img class="h-8 w-auto" src="../dist/img/logo.svg" alt="">
+      <p class="mt-5 text-center text-sm leading-6 text-slate-500">اینجا همه چیز رایگانه ولی از انصاف دوره که از مطالب
+        سایت استفاده کنین ولی سایت رو معرفی نکنین</p>
+      <div class="mt-16 flex items-center justify-center space-x-4 text-sm font-semibold leading-6 text-slate-700">
+        <a href="/privacy-policy">سیاست حریم خصوصی</a>
+        <div class="h-4 w-px bg-slate-500/20"></div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    let overlay = document.querySelector('#overlay');
+    let mobileMenu = document.querySelector('#mobile-menu');
+
+    function setMobileMenuClasses(){
+      mobileMenu.classList.toggle('sm:max-w-sm');
+        mobileMenu.classList.toggle('sm:max-w-0');
+        mobileMenu.classList.toggle('px-6');
+        mobileMenu.classList.toggle('w-full');
+        mobileMenu.classList.toggle('w-0');
+        mobileMenu.classList.toggle('opacity-0');
+        mobileMenu.classList.toggle('opacity-100');
+    }
+
+    function setOverlayClasses(){
+      if( overlay.classList.contains('opacity-0') ){
+        overlay.classList.remove('hidden');
+        setTimeout( _ => {
+          overlay.classList.remove('opacity-0');
+        }, 0 );
+      }
+      else{
+        overlay.classList.add('opacity-0');
+        setTimeout( _ => {
+          overlay.classList.add('hidden');
+        }, 500 )
+      }
+    }
+
+    document.querySelectorAll('.close-menu').forEach(item => {
+      item.addEventListener( 'click', e => {
+        setMobileMenuClasses();
+        setOverlayClasses();
+      } )
+    });
+
+    document.querySelector('#darkmode-toggle').addEventListener('click', e => {
+      document.querySelector('html').classList.toggle('dark');
+    });
+    
+    window.onload = function() {
+      document.body.classList.remove('opacity-0');
+    } 
+  </script>
+
+</body>
+
+</html>

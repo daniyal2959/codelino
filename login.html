@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>کدلینو | ورود به حساب کاربری</title>
+
+    <link rel="stylesheet" href="../dist/output.css">
+    <link rel="stylesheet" href="../dist/font.css">
+</head>
+<body class="font-sans antialiased text-gray-600 min-h-screen flex flex-col [overflow-anchor:none] transition-opacity duration-700 opacity-0">
+    <main class="relative flex flex-1 flex-col justify-center overflow-hidden px-4 py-8 sm:px-6 lg:px-8">
+        <img src="../dist/img/beams-cover.jpg" alt="" class="absolute left-1/2 top-0 -ml-[47.5rem] w-[122.5rem] max-w-none">
+        <div class="absolute inset-0 text-slate-900/[0.07] [mask-image:linear-gradient(to_bottom_left,white,transparent,transparent)]">
+            <svg class="absolute inset-0 h-full w-full" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <pattern id="grid-bg" width="32" height="32" patternUnits="userSpaceOnUse" x="100%" patternTransform="translate(0 -1)">
+                        <path d="M0 32V.5H32" fill="none" stroke="currentColor"></path>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#grid-bg)"></rect>
+            </svg>
+        </div>
+
+
+        <div class="pb-16 pt-12 flex flex-col">
+            <div class="z-10 flex justify-center items-center mb-6 select-none">
+                <img class="relative h-16 w-auto block pointer-events-none" src="../dist/img/logo.svg" alt="">
+                <p class="text-2xl mr-6 text-black">کدلینو | طعم خوب کد آزاد</p>
+            </div>
+            <!-- Login -->
+            <div id="login-form" class="relative flex flex-1 flex-col items-center justify-center transition-opacity duration-500">
+                <h1 class="sr-only">وارد حساب کاربری خودتون بشین</h1>
+                <form action="/login" class="w-full max-w-sm">
+                    <div class="mb-6">
+                        <label for="email" class="block text-sm font-semibold leading-6 text-gray-900">ایمیل</label>
+                        <input type="email" id="email" class="mt-2 appearance-none text-slate-900 bg-white rounded-md block w-full px-3 h-10 shadow-sm sm:text-sm focus:outline-none placeholder:text-slate-400 focus:ring-2 focus:ring-sky-500 ring-1 ring-slate-200" value="" required="">
+                    </div>
+                    <div class="mb-6">
+                        <label for="password" class="block text-sm font-semibold leading-6 text-gray-900">رمز عبور</label>
+                        <input type="password" id="password" class="mt-2 appearance-none text-slate-900 bg-white rounded-md block w-full px-3 h-10 shadow-sm sm:text-sm focus:outline-none placeholder:text-slate-400 focus:ring-2 focus:ring-sky-500 ring-1 ring-slate-200" value="" required="">
+                    </div>
+                    <button type="submit" class="transition-colors inline-flex justify-center rounded-lg text-sm font-semibold py-2.5 px-4 bg-slate-900 text-white hover:bg-slate-700 w-full">
+                        <span>ورود به حساب کاربری</span>
+                    </button>
+                    <input type="hidden" name="remember" value="true">
+                    <p class="mt-8 flex justify-between items-center">
+                        <a href="/password/reset" class="text-sm hover:underline" id="register-button">میخوام ثبت نام کنم</a>
+                        <a href="/password/reset" class="text-sm hover:underline" id="forgot-button">رمز عبورم رو فراموش کردم!</a>
+                    </p>
+                </form>
+            </div>
+
+            <!-- Register -->
+            <div id="register-form" class="relative flex flex-1 flex-col items-center justify-center hidden opacity-0 transition-opacity duration-500">
+                <h1 class="sr-only">اطلاعاتتون رو پر کنید تا ثبت نام بشید</h1>
+                <form action="/register" class="w-full max-w-sm">
+                    <div class="mb-6">
+                        <label for="fullName" class="block text-sm font-semibold leading-6 text-gray-900">اسم و فامیل</label>
+                        <input type="text" id="fullName" class="mt-2 appearance-none text-slate-900 bg-white rounded-md block w-full px-3 h-10 shadow-sm sm:text-sm focus:outline-none placeholder:text-slate-400 focus:ring-2 focus:ring-sky-500 ring-1 ring-slate-200" value="" required="">
+                    </div>
+                    <div class="mb-6">
+                        <label for="email" class="block text-sm font-semibold leading-6 text-gray-900">ایمیل</label>
+                        <input type="email" id="email" class="mt-2 appearance-none text-slate-900 bg-white rounded-md block w-full px-3 h-10 shadow-sm sm:text-sm focus:outline-none placeholder:text-slate-400 focus:ring-2 focus:ring-sky-500 ring-1 ring-slate-200" value="" required="">
+                    </div>
+                    <div class="mb-6">
+                        <label for="password" class="block text-sm font-semibold leading-6 text-gray-900">رمز عبور</label>
+                        <input type="password" id="password" class="mt-2 appearance-none text-slate-900 bg-white rounded-md block w-full px-3 h-10 shadow-sm sm:text-sm focus:outline-none placeholder:text-slate-400 focus:ring-2 focus:ring-sky-500 ring-1 ring-slate-200" value="" required="">
+                    </div>
+                    <button type="submit" class="transition-colors inline-flex justify-center rounded-lg text-sm font-semibold py-2.5 px-4 bg-slate-900 text-white hover:bg-slate-700 w-full">
+                        <span>ثبت نام در سایت</span>
+                    </button>
+                    <input type="hidden" name="remember" value="true">
+                    <p class="mt-8 flex justify-between items-center">
+                        <a href="/password/reset" class="text-sm hover:underline" id="login-button">میخوام وارد حساب کاربری بشم</a>
+                    </p>
+                </form>
+            </div>
+
+            <!-- Forgot Password -->
+            <div id="forgot-form" class="relative flex flex-1 flex-col items-center justify-center hidden opacity-0 transition-opacity duration-500">
+                <h1 class="sr-only">وارد حساب کاربری خودتون بشین</h1>
+                <form action="/forgot" class="w-full max-w-sm">
+                    <div class="mb-6">
+                        <label for="email" class="block text-sm font-semibold leading-6 text-gray-900">ایمیل</label>
+                        <input type="email" id="email" class="mt-2 appearance-none text-slate-900 bg-white rounded-md block w-full px-3 h-10 shadow-sm sm:text-sm focus:outline-none placeholder:text-slate-400 focus:ring-2 focus:ring-sky-500 ring-1 ring-slate-200" value="" required="">
+                    </div>
+                    <button type="submit" class="transition-colors inline-flex justify-center rounded-lg text-sm font-semibold py-2.5 px-4 bg-slate-900 text-white hover:bg-slate-700 w-full">
+                        <span>ارسال لینک تغییر رمز عبور</span>
+                    </button>
+                    <input type="hidden" name="remember" value="true">
+                    <p class="mt-8 flex justify-between items-center">
+                        <a href="/password/reset" class="text-sm hover:underline" id="forgot-to-register-button">میخوام ثبت نام کنم</a>
+                        <a href="/password/reset" class="text-sm hover:underline" id="forgot-to-login-button">میخوام وارد حساب کاربری بشم</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.querySelector('#register-button').addEventListener('click', e => {
+            e.preventDefault();
+            showForm('register', 'login');
+        });
+
+        document.querySelector('#login-button').addEventListener('click', e => {
+            e.preventDefault();
+            showForm('login', 'register');
+        });
+
+        document.querySelector('#forgot-button').addEventListener('click', e => {
+            e.preventDefault();
+            showForm('forgot', 'login');
+        });
+
+        document.querySelector('#forgot-to-login-button').addEventListener('click', e => {
+            e.preventDefault();
+            showForm('login', 'forgot');
+        });
+
+        document.querySelector('#forgot-to-register-button').addEventListener('click', e => {
+            e.preventDefault();
+            showForm('register', 'forgot');
+        });
+
+        function capitalizeFLetter(string) {
+            return string[0].toUpperCase() + string.slice(1);
+        }
+
+        function showForm(formName, currentFormName){
+            document.querySelector(`#${currentFormName}-form`).classList.add('opacity-0');
+            setTimeout( _ => {
+                document.querySelector(`#${currentFormName}-form`).classList.add('hidden');
+                const funcName = `show${capitalizeFLetter(formName)}Form`;
+                console.log(funcName)
+                window[funcName]();                
+            }, 500 );
+        }
+
+        function showLoginForm(){
+            document.querySelector('#login-form').classList.remove('hidden');
+            setTimeout( _ => {
+                document.querySelector('#login-form').classList.remove('opacity-0');
+            }, 100 );
+            document.querySelector('title').textContent = "کدلینو | ورود یه حساب کاربری";
+        }
+
+        function showRegisterForm(){
+            document.querySelector('#register-form').classList.remove('hidden');
+            setTimeout( _ => {
+                document.querySelector('#register-form').classList.remove('opacity-0');
+            }, 100 );
+            document.querySelector('title').textContent = "کدلینو | ایجاد حساب کاربری";
+        }
+
+        function showForgotForm(){
+            document.querySelector('#forgot-form').classList.remove('hidden');
+            setTimeout( _ => {
+                document.querySelector('#forgot-form').classList.remove('opacity-0');
+            }, 100 );
+            document.querySelector('title').textContent = "کدلینو | فراموشی رمز عبور";
+        }
+
+        window.onload = function() {
+            document.body.classList.remove('opacity-0');
+        } 
+    </script>
+</body>
+</html>

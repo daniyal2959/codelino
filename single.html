@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>کدلینو | بررسی کامپوننت</title>
+
+  <link rel="stylesheet" href="../dist/output.css">
+  <link rel="stylesheet" href="../dist/font.css">
+</head>
+
+<body class="transition-opacity duration-700 opacity-0">
+
+  <header class="absolute inset-x-0 top-0 z-50 px-6 lg:px-8">
+    <nav class="flex items-center justify-between py-6 border-b border-b-slate-200" aria-label="Global">
+      <div class="flex lg:flex-1">
+        <a href="#" class="flex justify-center items-center select-none -m-1.5 p-1.5">
+          <span class="sr-only">کدلینو</span>
+          <img class="h-8 w-auto" src="../dist/img/logo.svg" alt="">
+          <p class="text-md mr-6 text-black">کدلینو | طعم خوب کد آزاد</p>
+        </a>
+      </div>
+      <div class="flex close-menu lg:hidden" id="hamburger-menu">
+        <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+          <span class="sr-only">منوی اصلی را باز کنید</span>
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+            aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </button>
+      </div>
+      <div class="hidden lg:flex lg:gap-x-12">
+        <a href="./index.html" class="text-sm font-semibold leading-6 text-gray-900">صفحه اصلی</a>
+        <a href="#" class="text-sm font-semibold leading-6 text-gray-900">کامپوننت ها</a>
+        <a href="#" class="text-sm font-semibold leading-6 text-gray-900">قالب ها</a>
+      </div>
+      <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+        <a href="login.html" class="text-sm font-semibold leading-6 text-gray-900">ورود / ثبت نام <span
+            aria-hidden="true" class="mr-4">&larr;</span></a>
+      </div>
+    </nav>
+    <!-- Mobile menu, show/hide based on menu open state. -->
+    <div class="transition-all lg:hidden" role="dialog" aria-modal="true">
+      <!-- Background backdrop, show/hide based on slide-over state. -->
+      <div class="transition-all hidden opacity-0 fixed inset-0 z-50 bg-black/80 close-menu" id="overlay"></div>
+      <div id="mobile-menu"
+        class="transition-all opacity-0 duration-500 fixed inset-y-0 right-0 z-50 w-0 overflow-y-auto bg-slate-50 py-6 sm:max-w-0 sm:ring-1 sm:ring-gray-900/10">
+        <div class="flex items-center justify-between">
+          <a href="#" class="flex justify-center items-center select-none -m-1.5 p-1.5">
+            <span class="sr-only">کدلینو</span>
+            <img class="h-8 w-auto" src="../dist/img/logo.svg" alt="">
+            <p class="text-md mr-6 text-black">کدلینو | طعم خوب کد آزاد</p>
+          </a>
+          <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700 close-menu">
+            <span class="sr-only">بستن منو</span>
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+              aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="mt-6 flow-root">
+          <div class="-my-6 divide-y divide-gray-500/10">
+            <div class="space-y-2 py-6">
+              <a href="./index.html"
+                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">صفحه
+                اصلی</a>
+              <a href="#"
+                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">کامپوننت
+                ها</a>
+              <a href="#"
+                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">قالب
+                ها</a>
+            </div>
+            <div class="py-6">
+              <a href="login.html"
+                class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">ورود
+                / ثبت نام</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="relative isolate px-6 pt-14 lg:px-8">
+    <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
+      <div
+        class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+        style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+      </div>
+    </div>
+  </div>
+
+  <div class="max-w-container mx-auto p-6 relative z-10 lg:px-8 sm:py-48 lg:pt-32 lg:pb-0">
+    <div class="lg:flex lg:items-center lg:justify-between">
+      <div class="min-w-0 flex-1">
+        <nav aria-label="Breadcrumbs" class="order-first flex space-x-2 text-sm font-semibold mb-4">
+          <a class="text-slate-500 hover:text-slate-600" href="/components#product-application-ui">کامپوننت های رابط
+            کاربری</a>
+          <div aria-hidden="true" class="select-none text-slate-400">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"
+              class="fill-black w-5 h-5 rotate-180">
+              <path fill-rule="evenodd"
+                d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <a class="text-slate-500 hover:text-slate-600" href="/components#product-application-ui-headings">صفحه های
+            404</a>
+        </nav>
+        <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight">صفحه های 404</h2>
+      </div>
+    </div>
+
+    <div class="component mb-20">
+      <div class="lg:flex lg:items-center lg:justify-between py-6 relative z-10">
+        <div class="flex min-w-0">
+          <h2 class="text-2xl truncate font-medium leading-7 text-slate-900">
+            <a href="#component-7654075f650c9f1044bfcf1b1b6ffd77">عنوان کامپوننت</a>
+          </h2>
+          <p
+            class="mr-3 hidden whitespace-nowrap rounded-lg bg-slate-100 px-2 py-0.5 text-xs font-semibold leading-6 text-slate-700 lg:block">
+            نیازمند جاوا اسکریپت</p>
+        </div>
+        <div class="flex items-center">
+          <div class="flex space-x-1 rounded-lg bg-slate-100 p-0.5" role="tablist" aria-orientation="horizontal">
+            <button
+              class="flex items-center rounded-md py-[0.4375rem] pl-2 pr-2 text-sm font-semibold lg:pr-3 bg-white shadow"
+              id="headlessui-tabs-tab-1" role="tab" type="button" aria-selected="true" tabindex="0"
+              data-headlessui-state="selected" aria-controls="headlessui-tabs-panel-3">
+              <svg class="h-5 w-5 flex-none stroke-sky-500" fill="none" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.25 10c0 1-1.75 6.25-7.25 6.25S2.75 11 2.75 10 4.5 3.75 10 3.75 17.25 9 17.25 10Z"></path>
+                <circle cx="10" cy="10" r="2.25"></circle>
+              </svg>
+              <span class="sr-only lg:not-sr-only lg:ml-2 text-slate-900">Preview</span>
+            </button>
+            <button class="flex items-center rounded-md py-[0.4375rem] pl-2 pr-2 text-sm font-semibold lg:pr-3"
+              id="headlessui-tabs-tab-2" role="tab" type="button" aria-selected="false" tabindex="-1"
+              data-headlessui-state="" aria-controls="headlessui-tabs-panel-4">
+              <svg class="h-5 w-5 flex-none stroke-slate-600" fill="none" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                <path d="m13.75 6.75 3.5 3.25-3.5 3.25M6.25 13.25 2.75 10l3.5-3.25"></path>
+              </svg><span class="sr-only lg:not-sr-only lg:ml-2 text-slate-600">Code</span></button>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-span-2 row-start-2 min-w-0">
+        <div class="mt-4 focus:outline-none relative border border-slate-300 rounded-lg" id="headlessui-tabs-panel-3" role="tabpanel" tabindex="0" data-headlessui-state="selected" aria-labelledby="headlessui-tabs-tab-1" style="">
+          <iframe src="" frameborder="0" class="h-96 w-full"></iframe>
+          <div class="absolute inset-y-0 right-full hidden cursor-ew-resize items-center px-2 sm:flex iframe-slider">
+            <div class="h-8 w-1.5 rounded-full bg-slate-400"></div>
+          </div>
+        </div>
+
+        <div class="mt-4 focus:outline-none hidden" id="headlessui-tabs-panel-4" role="tabpanel" aria-labelledby="headlessui-tabs-tab-2" tabindex="0" data-headlessui-state="selected">
+          <pre class="bg-slate-900 flex overflow-auto rounded-b-lg text-sm leading-[1.5714285714] text-white sm:rounded-t-lg language-html">
+            
+          </pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="component mb-20">
+      <div class="lg:flex lg:items-center lg:justify-between py-6 relative z-10">
+        <div class="flex min-w-0">
+          <h2 class="text-2xl truncate font-medium leading-7 text-slate-900">
+            <a href="#component-7654075f650c9f1044bfcf1b1b6ffd77">عنوان کامپوننت</a>
+          </h2>
+          <p
+            class="mr-3 hidden whitespace-nowrap rounded-lg bg-slate-100 px-2 py-0.5 text-xs font-semibold leading-6 text-slate-700 lg:block">
+            نیازمند جاوا اسکریپت</p>
+        </div>
+        <div class="flex items-center">
+          <div class="flex space-x-1 rounded-lg bg-slate-100 p-0.5" role="tablist" aria-orientation="horizontal">
+            <button
+              class="flex items-center rounded-md py-[0.4375rem] pl-2 pr-2 text-sm font-semibold lg:pr-3 bg-white shadow"
+              id="headlessui-tabs-tab-1" role="tab" type="button" aria-selected="true" tabindex="0"
+              data-headlessui-state="selected" aria-controls="headlessui-tabs-panel-3">
+              <svg class="h-5 w-5 flex-none stroke-sky-500" fill="none" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.25 10c0 1-1.75 6.25-7.25 6.25S2.75 11 2.75 10 4.5 3.75 10 3.75 17.25 9 17.25 10Z"></path>
+                <circle cx="10" cy="10" r="2.25"></circle>
+              </svg>
+              <span class="sr-only lg:not-sr-only lg:ml-2 text-slate-900">Preview</span>
+            </button>
+            <button class="flex items-center rounded-md py-[0.4375rem] pl-2 pr-2 text-sm font-semibold lg:pr-3"
+              id="headlessui-tabs-tab-2" role="tab" type="button" aria-selected="false" tabindex="-1"
+              data-headlessui-state="" aria-controls="headlessui-tabs-panel-4">
+              <svg class="h-5 w-5 flex-none stroke-slate-600" fill="none" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                <path d="m13.75 6.75 3.5 3.25-3.5 3.25M6.25 13.25 2.75 10l3.5-3.25"></path>
+              </svg><span class="sr-only lg:not-sr-only lg:ml-2 text-slate-600">Code</span></button>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-span-2 row-start-2 min-w-0">
+        <div class="mt-4 focus:outline-none relative border border-slate-300 rounded-lg" id="headlessui-tabs-panel-3" role="tabpanel" tabindex="0" data-headlessui-state="selected" aria-labelledby="headlessui-tabs-tab-1" style="">
+          <iframe src="" frameborder="0" class="h-96 w-full"></iframe>
+          <div class="absolute inset-y-0 right-full hidden cursor-ew-resize items-center px-2 sm:flex iframe-slider">
+            <div class="h-8 w-1.5 rounded-full bg-slate-400"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-white mx-auto pt-32 w-full px-4 sm:px-6 lg:px-8">
+    <div class="max-w-container border-t border-slate-900/5 py-10 flex flex-col">
+      <img class="h-8 w-auto" src="../dist/img/logo.svg" alt="">
+      <p class="mt-5 text-center text-sm leading-6 text-slate-500">اینجا همه چیز رایگانه ولی از انصاف دوره که از مطالب
+        سایت استفاده کنین ولی سایت رو معرفی نکنین</p>
+      <div class="mt-16 flex items-center justify-center space-x-4 text-sm font-semibold leading-6 text-slate-700">
+        <a href="/privacy-policy">سیاست حریم خصوصی</a>
+        <div class="h-4 w-px bg-slate-500/20"></div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    let sliders = document.querySelectorAll('.iframe-slider');
+    let parent, firstWidth, isDown = false;
+
+    window.onload = function () {
+      document.body.classList.remove('opacity-0');
+    }
+
+    sliders.forEach( slider => {
+      slider.addEventListener('mousedown', _ => {
+        isDown = true;
+        parent = slider.parentElement;
+        if( !parent.hasAttribute('data-first-width') ){
+          parent.setAttribute('data-first-width', parent.clientWidth)
+        }
+      }, true);
+    } )
+
+    document.addEventListener('mouseup', _ => isDown = false, true);
+
+    document.addEventListener('mousemove', function(e) {
+        event.preventDefault();
+        if (isDown) {
+          let firstWidth = parent.getAttribute('data-first-width');
+          let newWidth = firstWidth - e.clientX + 90;
+
+          if( newWidth > 320 && newWidth < firstWidth ){
+            parent.style.width = `${newWidth}px`;
+          }
+        }
+    }, true);
+
+
+  </script>
+</body>
+
+</html>
